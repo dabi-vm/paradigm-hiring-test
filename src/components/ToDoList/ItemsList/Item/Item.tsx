@@ -53,6 +53,7 @@ const CustomListItem: FC<IProps> = ({
         </IconButton>
       }
       onDoubleClick={() => setModifyMode(true)}
+      data-testid="todo-item"
     >
       <ListItemButton role={undefined} dense>
         <ListItemIcon>
@@ -72,6 +73,11 @@ const CustomListItem: FC<IProps> = ({
           id={id}
           primary={text}
           className={checked ? classes.checkedItem : undefined}
+          primaryTypographyProps={
+            {
+              "data-testid": "todo-text",
+            } as any
+          }
         />
       </ListItemButton>
     </ListItem>

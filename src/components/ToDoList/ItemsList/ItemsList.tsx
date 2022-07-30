@@ -17,7 +17,7 @@ export const ItemsList: FC<IProps> = ({
 }) => {
   return (
     <List>
-      {list.map((item) => (
+      {list?.map((item) => (
         <CustomListItem
           key={item.id}
           onCheckBoxClick={onCheckBoxClick}
@@ -26,9 +26,11 @@ export const ItemsList: FC<IProps> = ({
           {...item}
         />
       ))}
-      <Typography variant="caption" color="GrayText">
-        Double click on an item to edit it.
-      </Typography>
+      {!list && (
+        <Typography variant="caption" color="GrayText">
+          Double click on an item to edit it.
+        </Typography>
+      )}
     </List>
   );
 };
