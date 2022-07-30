@@ -3,7 +3,7 @@ import { ToDoList } from "../components/ToDoList/ToDoList";
 
 export const Main = () => {
   return (
-    <Container component="main" maxWidth='sm'>
+    <Container component="main" maxWidth="sm">
       <ToDoList />
     </Container>
   );
